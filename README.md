@@ -34,8 +34,9 @@ Create a `.env` file in the root directory and add the following variables:
 MONGODB_URI=mongodb://localhost:27017/master
 ENCRYPTION_KEY=your_encryption_key
 
-## Routes preview
+```
 
+## Routes preview
 ```
 POST   /api/tenants       - Create tenant
 GET    /api/tenants      - List tenants
@@ -47,6 +48,7 @@ POST   /api/products     - Create product
 PUT    /api/products/:id - Update product
 DELETE /api/products/:id - Delete product
 
+```
 
 ## Project Strucutre 
 
@@ -58,3 +60,5 @@ src/
 ├── users/         # User management
 ├── common/        # Shared resources
 └── config/        # Configuration 
+
+```
