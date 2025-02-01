@@ -45,7 +45,8 @@ POST   /api/auth/register - User registration
 GET    /api/products     - List products
 POST   /api/products     - Create product
 PUT    /api/products/:id - Update product
-DELETE /api/products/:id - Delete product```
+DELETE /api/products/:id - Delete product
+
 
 ## Project Strucutre 
 
@@ -56,4 +57,4 @@ src/
 ├── products/      # Product operations
 ├── users/         # User management
 ├── common/        # Shared resources
-└── config/        # Configuration ```
+└── config/        # Configuration 
