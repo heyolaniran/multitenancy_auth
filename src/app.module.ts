@@ -5,6 +5,10 @@ import { TenantModule } from './tenant/tenant.module';
 import { ProductsModule } from './products/products.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { JwtModule } from '@nestjs/jwt';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { TenantConnectionService } from './services/tenant-connection.service';
 
 @Module({
   imports: [
@@ -16,11 +20,16 @@ import { MongooseModule } from '@nestjs/mongoose';
         uri: process.env.MONGODB_URI!,
       }),
     }),
-
+    JwtModule.register({
+      secret: process.env.JWT_SECRET!,
+      global: true,
+    }),
     TenantModule,
     ProductsModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, TenantConnectionService],
 })
 export class AppModule {}

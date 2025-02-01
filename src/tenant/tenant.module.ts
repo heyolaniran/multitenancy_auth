@@ -3,6 +3,8 @@ import { TenantService } from './tenant.service';
 import { TenantController } from './tenant.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Tenant, TenantSchema } from 'src/schemas/tenant.schema';
+import { UsersModule } from 'src/users/users.module';
+import { AuthModule } from 'src/auth/auth.module';
 @Global()
 @Module({
   imports: [
@@ -12,6 +14,8 @@ import { Tenant, TenantSchema } from 'src/schemas/tenant.schema';
         schema: TenantSchema,
       },
     ]),
+    UsersModule,
+    AuthModule,
   ],
   controllers: [TenantController],
   providers: [TenantService],

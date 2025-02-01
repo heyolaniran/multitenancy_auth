@@ -7,6 +7,7 @@ import { Products, ProductSchema } from 'src/schemas/product.schema';
 import { TenantMiddleware } from 'src/middleware/tenant.middleware';
 import { tenantConnectionProvider } from 'src/providers/tenant-connection.provider';
 import { tenantModels } from 'src/providers/tenant-models.provider';
+import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { tenantModels } from 'src/providers/tenant-models.provider';
       },
     ]),
   */
+    AuthModule,
   ],
   controllers: [ProductsController],
   providers: [
