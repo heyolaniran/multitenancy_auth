@@ -24,3 +24,13 @@ A NestJS-based multi-tenant API that implements database-per-tenant architecture
 2. Install dependencies:
 ```bash
 npm install
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory and add the following variables:
+
+```env
+MONGODB_URI=mongodb://localhost:27017/master
+ENCRYPTION_KEY=your_encryption_key
+```
